@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --max-width: 1400px;
+    --p-card-body-padding: 0 !important;
+    --p-inputtext-placeholder-color: #131416 !important;
+    --p-dialog-background: linear-gradient(
+      90deg,
+      #f5cea6 0%,
+      #ec598b 32%,
+      #8d42e7 54.5%,
+      #1f5cef 74%,
+      #00b9f6 100%
+    ) !important;
+  }
+
+  body {
+    @apply min-h-screen font-sans text-white bg-surface-900;
+  }
+}
+
+@layer components {
+  .container-base {
+    @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .nav-button {
+    @apply px-4 py-2 rounded-full transition-colors
+           bg-surface-700/50 hover:bg-surface-700
+           backdrop-blur-sm border border-white/10;
+  }
+
+  .try-vika-button {
+    @apply px-4 py-2 rounded-full transition-colors;
+    background: linear-gradient(
+      90deg,
+      rgba(141, 66, 231, 0.2) 0%,
+      rgba(236, 89, 139, 0.2) 100%
+    );
+    @apply text-brand-pink hover:bg-brand-purple/20;
+  }
+}
+
+@layer utilities {
+  .brand-gradient-text {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .brand-gradient-text-2 {
+    @apply bg-brand-gradient-2 bg-clip-text text-transparent;
+  }
+
+  .brand-shadow {
+    text-shadow: 0 0 30px rgba(236, 89, 139, 0.3);
+  }
+
+  .border-gradient {
+    @apply relative border border-white/20 backdrop-blur-sm
+           bg-surface-700/30 shadow-lg;
+  }
+
+  .border-dots::before,
+  .border-dots::after {
+    @apply content-[''] absolute w-2.5 h-2.5 bg-gray-300;
+  }
+
+  .border-dots::before {
+    @apply -top-1.5 -left-1.5;
+  }
+
+  .border-dots::after {
+    @apply -top-1.5 -right-1.5;
+  }
+}
+
+/* Глобальные стили */
+.app {
+  @apply min-h-screen bg-surface-900 relative overflow-hidden;
+}
+
+.landing-background {
+  @apply fixed inset-0 w-full h-full opacity-80 mix-blend-screen pointer-events-none z-0;
+  background-size: cover;
+  background-position: center;
+}
+
+.p-card {
+  background: #131416 !important;
+}
+
+.square {
+  min-width: 26px;
+  height: 26px;
+  background-color: #ffffff;
+}
+
+.border-container {
+  border: 0.3px solid #fff;
+  padding: 10px;
+  width: min-content;
+  position: relative;
+  width: 100%;
+}
+
+.border-container::before,
+.border-container::after,
+.border-container > h2::before,
+.border-container > h2::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: #ffffff;
+}
+
+.border-container::before {
+  top: -13px;
+  left: -13px;
+}
+
+.border-container::after {
+  top: -13px;
+  right: -13px;
+}
+
+.border-container > h2::before {
+  bottom: -23px;
+  left: -23px;
+}
+
+.border-container > h2::after {
+  bottom: -23px;
+  right: -23px;
+}
+
+/* LEVEL UP */
+
+#level-up .border-container::before {
+  top: -13px;
+  left: -13px;
+}
+
+#level-up .border-container::after {
+  top: -13px;
+  right: -13px;
+}
+
+#level-up .border-container > h2::before {
+  bottom: -13px;
+  left: -13px;
+}
+
+#level-up .border-container > h2::after {
+  bottom: -13px;
+  right: -13px;
+}
+/* LEVEL UP */
+
+/* HERO */
+#hero .border-container-small::before {
+  top: -13px;
+  left: -13px;
+}
+
+#hero .border-container-small::after {
+  top: -13px;
+  right: -13px;
+}
+
+#hero .border-container-small > h2::before {
+  bottom: -3px;
+  left: -3px;
+}
+
+#hero .border-container-small > h2::after {
+  bottom: -3px;
+  right: -3px;
+}
+
+/* LEVEL UP */
+
+
+.border-container-small {
+  border: 0.3px solid #fff;
+  padding: 10px;
+  width: min-content;
+  position: relative;
+}
+
+.border-container-small::before,
+.border-container-small::after,
+.border-container-small > h2::before,
+.border-container-small > h2::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+}
+
+.border-container-small::before {
+  top: -4px;
+  left: -4px;
+}
+
+.border-container-small::after {
+  top: -4px;
+  right: -4px;
+}
+
+.border-container-small > h2::before {
+  bottom: -14px;
+  left: -14px;
+}
+
+.border-container-small > h2::after {
+  bottom: -14px;
+  right: -14px;
+}
+
+/* Адаптивность для обоих классов */
+@media (max-width: 640px) {
+  .border-container::before,
+  .border-container::after,
+  .border-container > h2::before,
+  .border-container > h2::after {
+    width: 16px;
+    height: 16px;
+  }
+
+  .border-container::before {
+    top: -8px;
+    left: -8px;
+  }
+
+  .border-container::after {
+    top: -8px;
+    right: -8px;
+  }
+
+  .border-container > h2::before {
+    bottom: -18px;
+    left: -18px;
+  }
+
+  .border-container > h2::after {
+    bottom: -18px;
+    right: -18px;
+  }
+
+  .border-container-small::before,
+  .border-container-small::after,
+  .border-container-small > h2::before,
+  .border-container-small > h2::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .border-container-small::before {
+    top: -3px;
+    left: -3px;
+  }
+
+  .border-container-small::after {
+    top: -3px;
+    right: -3px;
+  }
+
+  .border-container-small > h2::before {
+    bottom: -13px;
+    left: -13px;
+  }
+
+  .border-container-small > h2::after {
+    bottom: -13px;
+    right: -13px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .border-container::before,
+  .border-container::after,
+  .border-container > h2::before,
+  .border-container > h2::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .border-container::before {
+    top: -10px;
+    left: -10px;
+  }
+
+  .border-container::after {
+    top: -10px;
+    right: -10px;
+  }
+
+  .border-container > h2::before {
+    bottom: -20px;
+    left: -20px;
+  }
+
+  .border-container > h2::after {
+    bottom: -20px;
+    right: -20px;
+  }
+
+  .border-container-small::before,
+  .border-container-small::after,
+  .border-container-small > h2::before,
+  .border-container-small > h2::after {
+    width: 7px;
+    height: 7px;
+  }
+
+  .border-container-small::before {
+    top: -3.5px;
+    left: -3.5px;
+  }
+
+  .border-container-small::after {
+    top: -3.5px;
+    right: -3.5px;
+  }
+
+  .border-container-small > h2::before {
+    bottom: -14px;
+    left: -14px;
+  }
+
+  .border-container-small > h2::after {
+    bottom: -14px;
+    right: -14px;
+  }
+}
+
+.gradient-border {
+  position: relative;
+  background: transparent;
+  z-index: 0;
+  padding: 0.5rem 1.5rem;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 9999px;
+  padding: 4px;
+  background: linear-gradient(
+    90deg,
+    #f5cea6 0%,
+    #ec598b 21.67%,
+    #1f5cef 72.67%,
+    #00b9f6 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.gradient-border:hover::before {
+  opacity: 0.8;
+}
