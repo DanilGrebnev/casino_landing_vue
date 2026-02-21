@@ -9,7 +9,7 @@
         </li>
       </ul>
       <button type="button" @click="handleSpin" :disabled="isSpinning">
-        SPIN
+        Start
       </button>
     </fieldset>
   </div>
@@ -24,11 +24,11 @@ const isSpinning = ref(false);
 // Захардкоженные данные призов
 const prizes = ref([
   {
-    label: "+20% LTV",
+    label: "+20% ARPU",
     value: 1,
     weight: 20,
     description:
-      "Lifetime Value increases by more than 20% due to precise offer personalization, customer need analysis, and predictive behavior modeling.",
+      "Average Revenue Per User increases by more than 20% due to precise offer personalization, customer need analysis, and predictive behavior modeling.",
   },
   {
     label: "+150% lead conversion",
@@ -52,18 +52,18 @@ const prizes = ref([
       "The AI assistant handles over 3,000 concurrent chats, ensuring instant support without delays.",
   },
   {
-    label: "Withdrawals <90 sec",
+    label: "Approvals in minutes",
     value: 5,
     weight: 10,
     description:
-      "Withdrawal requests are processed twice as fast thanks to automated risk assessment.",
+      "Transactions are processed twice as fast thanks to automated risk assessment.",
   },
   {
-    label: "-30% fewer disputes",
+    label: "-30% fewer escalations",
     value: 6,
     weight: 8,
     description:
-      "The number of player complaints and disputes decreases by 30% due to standardized AI-driven decisions and minimized errors.",
+      "The number of client support escalations decreases by 30% due to standardized AI-driven decisions and minimized errors.",
   },
   {
     label: "-25% fraud loss reduction",

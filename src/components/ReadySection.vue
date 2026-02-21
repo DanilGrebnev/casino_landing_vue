@@ -23,11 +23,11 @@
         <h3
           class="text-[20px] sm:text-[32px] md:text-[48px] lg:text-[76px] font-semibold leading-tight text-center sm:text-left"
         >
-          Faster approvals, happier
+          Verified faster, satisfied
           <br class="hidden sm:block" />
-          clients — a winning
+          clients — a proven
           <br class="hidden sm:block" />
-          combination for any operator.
+          solution for any business.
         </h3>
 
         <!-- Преимущества -->
@@ -90,7 +90,7 @@
               <p class="text-surface-200 text-sm sm:text-base md:text-lg">
                 React instantly to market changes
                 <br class="hidden sm:block" />
-                and player behavior.
+                and client behavior.
               </p>
             </template>
           </Card>
@@ -103,7 +103,7 @@
               <h4
                 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-5 brand-gradient-text"
               >
-                Expand Horizons, Limit Losses
+                Expand Horizons, Protect Margins
                 <div
                   class="h-0.5 sm:h-1 w-12 sm:w-16 md:w-48 lg:w-54 bg-gradient-to-r from-rose-300 via-violet-400 to-sky-400 mt-1 sm:mt-2 rounded-lg"
                 ></div>

@@ -70,7 +70,7 @@
                   One Bot with Endless Solutions
                 </h3>
                 <p class="text-sm sm:text-base md:text-lg lg:text-[20px]">
-                  From support to payments and analysis, everything in one
+                  From support to workflows and analysis, everything in one
                   ecosystem.
                 </p>
               </div>

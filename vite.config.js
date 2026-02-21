@@ -1,7 +1,7 @@
-import { fileURLToPath, URL } from "node:url"
-import { defineConfig } from "vite"
-import vue from "@vitejs/plugin-vue"
-import vueDevTools from "vite-plugin-vue-devtools"
+import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vueDevTools from "vite-plugin-vue-devtools";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,11 +11,9 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  preview: {
-    port: 5005,
-    host: true,
-  },
   server: {
+    host: '127.0.0.1',
+    port: 5173,
     proxy: {
       "/api": {
         target: "http://localhost",
@@ -25,4 +23,4 @@ export default defineConfig({
       },
     },
   },
-})
+});

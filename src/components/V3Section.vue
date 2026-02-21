@@ -33,7 +33,7 @@
           <h3
             class="text-[20px] sm:text-[24px] md:text-[48px] lg:text-[81px] leading-tight text-surface-50 font-semibold"
           >
-            Let your metrics drive player<br class="hidden sm:block" />lifetime
+            Let your metrics drive client<br class="hidden sm:block" />lifetime
             value.
           </h3>
         </div>
@@ -57,7 +57,7 @@
                 <p
                   class="text-surface-200 text-sm sm:text-base md:text-lg lg:text-xl"
                 >
-                  Understand player habits and optimize your promotions.
+                  Understand client habits and optimize your offers.
                 </p>
               </div>
             </template>
@@ -78,7 +78,7 @@
                 <p
                   class="text-surface-200 text-sm sm:text-base md:text-lg lg:text-xl"
                 >
-                  Identify early signals of dropout, keep players engaged
+                  Identify early signals of dropout, keep clients engaged
                   longer.
                 </p>
               </div>
@@ -95,7 +95,7 @@
                 <h4
                   class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold brand-gradient-text"
                 >
-                  Personalize Promos & Skyrocket Revenue
+                  Personalize Offers & Maximize ROI
                 </h4>
                 <p
                   class="text-surface-200 text-sm sm:text-base md:text-lg lg:text-xl"

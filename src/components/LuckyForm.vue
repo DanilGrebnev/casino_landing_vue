@@ -15,7 +15,7 @@
         >
           <div class="text-center mb-5 congratulations">
             <h3 class="text-lg sm:text-xl md:text-2xl text-white flex flex-col">
-              <span class="font-bold">{{ selectedPrize?.label }}!</span>
+             <span class="font-bold">{{ selectedPrize?.label }}!</span>
             </h3>
           </div>
           <div class="flex flex-col gap-4 px-4 sm:px-8 mb-2">
@@ -44,7 +44,7 @@
                   >Submit</span
                 >
               </Button>
-
+              
               <a
                 href="https://t.me/theAi_supportBot"
                 class="submit-button w-full h-11 flex items-center justify-center font-black border-2 border-red-500"
@@ -53,6 +53,7 @@
                   >try TheAI</span
                 >
               </a>
+              
             </form>
           </div>
         </div>
@@ -72,14 +73,14 @@
 </template>
 
 <script>
-import { useVuelidate } from "@vuelidate/core"
-import { required, email } from "@vuelidate/validators"
-import Button from "primevue/button"
-import InputText from "primevue/inputtext"
-import Toast from "primevue/toast"
-import Dialog from "primevue/dialog"
-import CssFortuneWheel from "./CssFortuneWheel.vue"
-import { useToast } from "primevue/usetoast"
+import { useVuelidate } from "@vuelidate/core";
+import { required, email } from "@vuelidate/validators";
+import Button from "primevue/button";
+import InputText from "primevue/inputtext";
+import Toast from "primevue/toast";
+import Dialog from "primevue/dialog";
+import CssFortuneWheel from "./CssFortuneWheel.vue";
+import { useToast } from "primevue/usetoast";
 
 export default {
   name: "LuckyForm",
@@ -101,40 +102,40 @@ export default {
         email: "",
       },
       v$: null,
-    }
+    };
   },
   created() {
     const rules = {
       formData: {
         email: { required, email },
       },
-    }
-    this.v$ = useVuelidate(rules, this)
+    };
+    this.v$ = useVuelidate(rules, this);
   },
   setup() {
     return {
       toast: useToast(),
-    }
+    };
   },
   methods: {
     handlePrizeSelected(prize) {
-      this.selectedPrize = prize
-      this.showForm = true
+      this.selectedPrize = prize;
+      this.showForm = true;
       // Win notification removed
     },
     async submitForm() {
-      this.submitted = true
-      const isValid = await this.v$.$validate()
+      this.submitted = true;
+      const isValid = await this.v$.$validate();
 
       if (!isValid) {
         if (this.v$.formData.email.$invalid) {
-          let errorMessage = "This field is required"
+          let errorMessage = "This field is required";
           if (
             this.formData.email &&
             this.v$.formData.email.$invalid &&
             !this.v$.formData.email.required
           ) {
-            errorMessage = "Invalid email address"
+            errorMessage = "Invalid email address";
           }
           this.toast.add({
             severity: "error",
@@ -143,12 +144,12 @@ export default {
             life: 3000,
             className:
               "bg-red-500/90 backdrop-blur-md text-white border border-red-300",
-          })
+          });
         }
-        return
+        return;
       }
 
-      this.loading = true
+      this.loading = true;
       this.toast.add({
         severity: "info",
         summary: "Sending",
@@ -156,7 +157,7 @@ export default {
         life: 3000,
         className:
           "bg-blue-500/90 backdrop-blur-md text-white border border-blue-300",
-      })
+      });
 
       try {
         const response = await fetch("/api/submit-feedback.php", {
@@ -166,12 +167,12 @@ export default {
             email: this.formData.email,
             bonus: this.selectedPrize,
           }),
-        })
+        });
 
-        const result = await response.json()
+        const result = await response.json();
 
         if (!response.ok || !result.success) {
-          throw new Error(result.message || "Server error")
+          throw new Error(result.message || "Server error");
         }
 
         this.toast.add({
@@ -181,10 +182,10 @@ export default {
           life: 3000,
           className:
             "bg-green-500/90 backdrop-blur-md text-white border border-green-300",
-        })
-        this.formSubmitted = true
-        this.showForm = false
-        setTimeout(() => this.resetForm(), 2000)
+        });
+        this.formSubmitted = true;
+        this.showForm = false;
+        setTimeout(() => this.resetForm(), 2000);
       } catch (error) {
         this.toast.add({
           severity: "error",
@@ -193,21 +194,21 @@ export default {
           life: 3000,
           className:
             "bg-red-500/90 backdrop-blur-md text-white border border-red-300",
-        })
+        });
       } finally {
-        this.loading = false
+        this.loading = false;
       }
     },
     resetForm() {
-      this.showForm = false
-      this.formSubmitted = false
-      this.submitted = false
-      this.selectedPrize = null
-      this.formData.email = ""
-      this.v$.$reset()
+      this.showForm = false;
+      this.formSubmitted = false;
+      this.submitted = false;
+      this.selectedPrize = null;
+      this.formData.email = "";
+      this.v$.$reset();
     },
   },
-}
+};
 </script>
 
 <style scoped>

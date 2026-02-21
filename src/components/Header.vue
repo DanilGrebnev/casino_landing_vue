@@ -30,28 +30,31 @@
           @click="scrollToSection(item.uid)"
         />
         <a
-          class="nav-button gradient-border brand-gradient-text !pt-[10px]"
-          href="https://t.me/theAi_supportBot"
-          target="_blank"
-          style="
-            background: linear-gradient(
-              90deg,
-              #f5cea6 0%,
-              #ec598b 27%,
-              #8d42e7 42%,
-              #0f5fce 57%,
-              #1b09f6 70%,
-              #00b9fb 100%
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-          "
-        >
-          Try TheAI
-        </a>
+  class="nav-button gradient-border brand-gradient-text !pt-[10px]"
+  href="https://t.me/theAi_supportBot"
+  target="_blank"
+  style="
+    background: linear-gradient(
+      90deg,
+      #F5CEA6 0%,
+      #EC598B 27%,
+      #8D42E7 42%,
+      #0F5FCE 57%,
+      #1B09F6 70%,
+      #00B9FB 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  "
+>
+  Try TheAI
+</a>
+
+
       </nav>
+
 
       <!-- Mobile Menu Button -->
       <div class="block lg:hidden">
@@ -64,15 +67,13 @@
         </Button>
       </div>
 
-      <!-- Mobile Navigation -->
+     <!-- Mobile Navigation -->
 
       <div
         v-if="isMenuOpen"
-        class="mobile-nav fixed inset-0 top-[60px] sm:top-[72px] lg:hidden"
+        class="mobile-nav fixed inset-0 top-[60px] sm:top-[72px]  lg:hidden"
       >
-        <nav
-          class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface-900/80 backdrop-blur-md"
-        >
+        <nav class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface-900/80 backdrop-blur-md">
           <Button
             v-for="item in menuItems"
             :key="item.label"
@@ -82,36 +83,39 @@
             @click="scrollToSection(item.uid)"
           />
           <a
-            class="nav-button gradient-border brand-gradient-text !pt-[10px]"
-            href="https://t.me/theAi_supportBot"
-            target="_blank"
-            style="
-              background: linear-gradient(
-                90deg,
-                #f5cea6 0%,
-                #ec598b 27%,
-                #8d42e7 42%,
-                #0f5fce 57%,
-                #1b09f6 70%,
-                #00b9fb 100%
-              );
-              -webkit-background-clip: text;
-              background-clip: text;
-              -webkit-text-fill-color: transparent;
-              color: transparent;
-            "
-          >
-            Try TheAI
-          </a>
+  class="nav-button gradient-border brand-gradient-text !pt-[10px]"
+  href="https://t.me/theAi_supportBot"
+  target="_blank"
+  style="
+    background: linear-gradient(
+      90deg,
+      #F5CEA6 0%,
+      #EC598B 27%,
+      #8D42E7 42%,
+      #0F5FCE 57%,
+      #1B09F6 70%,
+      #00B9FB 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  "
+>
+  Try TheAI
+</a>
+
         </nav>
       </div>
+
+
     </div>
   </header>
 </template>
 
 <script>
-import Button from "primevue/button"
-import { gsap } from "gsap"
+import Button from "primevue/button";
+import { gsap } from "gsap";
 
 export default {
   name: "Header",
@@ -129,52 +133,52 @@ export default {
         { label: "For business", uid: "business" },
         { label: "Submit an application", uid: "application" },
       ],
-    }
+    };
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScrollDebounced)
+    window.addEventListener("scroll", this.handleScrollDebounced);
     // Анимация появления header при загрузке
     gsap.from(this.$el, {
       duration: 1,
       y: -50,
       opacity: 0,
       ease: "power2.out",
-    })
+    });
   },
   unmounted() {
-    window.removeEventListener("scroll", this.handleScrollDebounced)
+    window.removeEventListener("scroll", this.handleScrollDebounced);
   },
   methods: {
     handleScroll() {
-      const currentScrollY = window.scrollY
-      this.isScrolled = currentScrollY > 50
-
+      const currentScrollY = window.scrollY;
+      this.isScrolled = currentScrollY > 50;
+      
       if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
-        this.isHidden = true
+        this.isHidden = true;
       } else if (currentScrollY < this.lastScrollY) {
-        this.isHidden = false
+        this.isHidden = false;
       }
-
-      this.lastScrollY = currentScrollY
+      
+      this.lastScrollY = currentScrollY;
     },
     handleScrollDebounced() {
-      clearTimeout(this.scrollTimeout)
+      clearTimeout(this.scrollTimeout);
       this.scrollTimeout = setTimeout(() => {
-        this.handleScroll()
-      }, 100)
+        this.handleScroll();
+      }, 100);
     },
     scrollToSection(uid) {
-      const el = document.getElementById(uid)
+      const el = document.getElementById(uid);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" })
+        el.scrollIntoView({ behavior: "smooth" });
       }
       // Закрываем мобильное меню, если оно было открыто
-      this.isMenuOpen = false
+      this.isMenuOpen = false;
     },
   },
   watch: {
     isMenuOpen(newValue) {
-      document.body.style.overflow = newValue ? "hidden" : ""
+      document.body.style.overflow = newValue ? "hidden" : "";
       if (newValue) {
         this.$nextTick(() => {
           gsap.from(".mobile-nav", {
@@ -182,14 +186,15 @@ export default {
             opacity: 0,
             scale: 0.95,
             ease: "power2.out",
-          })
-        })
-        this.isHidden = false
+          });
+        });
+        this.isHidden = false;
       }
     },
   },
-}
+};
 </script>
+
 
 <style scoped>
 .nav-button {
@@ -246,7 +251,7 @@ export default {
     text-align: center;
     background: rgba(17, 17, 17, 0.7);
   }
-
+  
   nav {
     background: linear-gradient(
       180deg,

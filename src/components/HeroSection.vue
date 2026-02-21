@@ -4,7 +4,7 @@
     class="hero-section w-full px-4 sm:px-6 py-8 sm:py-12 md:py-16 pt-[84px] sm:pt-[96px] md:pt-[104px] md:pb-[-150px]"
   >
     <div class="max-w-7xl mx-auto">
-      <img src="@/assets/images/v1.png" alt="" class="absolute w-[50%]" />
+      <img src="@/assets/images/v1.png" alt="" class="absolute w-[50%]">
       <!-- Адаптивные заголовки -->
       <h2
         class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold brand-gradient-text"
@@ -14,9 +14,9 @@
       <h2
         class="text-3xl text-white sm:text-4xl md:text-5xl lg:text-7xl font-bold"
       >
-        Your Casino
+        Your Business
         <br class="hidden sm:block" />
-        & Betting Operations with
+        & Operations with
       </h2>
 
       <!-- Контейнер с логотипом -->
@@ -25,7 +25,7 @@
       >
         <h2
           class="text-4xl sm:text-5xl md:text-7xl lg:text-[160px] font-bold brand-gradient-text w-full h-full"
-          style="line-height: 1.2"
+          style="line-height: 1.2;"
         >
           theAI.energy
         </h2>
@@ -38,19 +38,19 @@
         <!-- Сетка особенностей -->
         <div class="w-[95%]">
           <a
-            class="gradient-border brand-gradient-text font-black text-lg flex items-center justify-center mt-6 !w-[340px] h-[60px]"
+            class="gradient-border brand-gradient-text font-black text-lg flex items-center justify-center mt-6  !w-[340px] h-[60px]"
             href="https://t.me/theAi_supportBot"
             target="_blank"
             style="
-              width: 400px;
+            width: 400px;
               background: linear-gradient(
                 90deg,
-                #f5cea6 0%,
-                #ec598b 27%,
-                #8d42e7 42%,
-                #0f5fce 57%,
-                #1b09f6 70%,
-                #00b9fb 100%
+                #F5CEA6 0%,
+                #EC598B 27%,
+                #8D42E7 42%,
+                #0F5FCE 57%,
+                #1B09F6 70%,
+                #00B9FB 100%
               );
               -webkit-background-clip: text;
               background-clip: text;
@@ -66,7 +66,7 @@
           class="text-surface-200 text-base sm:text-lg md:text-xl lg:text-4xl lg:-mb-36 lg:-pb-[20px] font-semibold translate-y-5 w-[100%]"
         >
           <span class="brand-gradient-text">We are the AI.energy</span> — a team
-          of proven AI practitioners helping gaming businesses cut costs, drive
+          of proven AI practitioners helping businesses cut costs, drive
           revenue, and stay one step ahead.
         </div>
       </div>
@@ -75,15 +75,15 @@
 </template>
 
 <script>
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "HeroSection",
   mounted() {
-    const section = this.$refs.heroSection
+    const section = this.$refs.heroSection;
 
     // Анимация появления всей секции при попадании в область видимости
     gsap.fromTo(
@@ -97,57 +97,52 @@ export default {
         scrollTrigger: {
           trigger: section,
           start: "top 80%",
-          toggleActions: "play none none none",
-        },
+          toggleActions: "play none none none"
+        }
       }
-    )
+    );
 
     // Эффект проявления (reveal) для текстовых элементов внутри секции
     // Анимируются все h2, span (исключая button-text, если они есть) и p
-    gsap.from(section.querySelectorAll("h2, span:not(.button-text), p"), {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      delay: 0.3,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    })
+    gsap.from(
+      section.querySelectorAll("h2, span:not(.button-text), p"),
+      {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        delay: 0.3,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      }
+    );
 
     // Если на странице есть кнопки, добавляем анимацию появления и переливание цвета для текста кнопок
-    const buttons = section.querySelectorAll("button")
-    buttons.forEach((button) => {
-      const buttonText = button.querySelector(".button-text")
+    const buttons = section.querySelectorAll("button");
+    buttons.forEach(button => {
+      const buttonText = button.querySelector(".button-text");
       if (buttonText) {
         // Анимация появления текста кнопки
         gsap.fromTo(
           buttonText,
           { opacity: 0, y: 10 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power1.out" }
-        )
+        );
         // Переливание цвета текста на hover
         button.addEventListener("mouseenter", () => {
-          gsap.to(buttonText, {
-            color: "#ff9900",
-            duration: 0.5,
-            ease: "power1.out",
-          })
-        })
+          gsap.to(buttonText, { color: "#ff9900", duration: 0.5, ease: "power1.out" });
+        });
         button.addEventListener("mouseleave", () => {
-          gsap.to(buttonText, {
-            color: "#ffffff",
-            duration: 0.5,
-            ease: "power1.out",
-          })
-        })
+          gsap.to(buttonText, { color: "#ffffff", duration: 0.5, ease: "power1.out" });
+        });
       }
-    })
-  },
-}
+    });
+  }
+};
 </script>
 
 <style scoped>

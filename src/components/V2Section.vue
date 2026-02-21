@@ -17,7 +17,7 @@
             <span
               class="text-surface-200 text-xs text-center sm:text-3xl md:text-4xl lg:text-5xl font-medium w-full"
             >
-              Fraud Prevention & Fast Payouts (Bot v2)
+              Real-Time Fraud Detection & Compliance (Bot v2)
             </span>
           </div>
         </div>
@@ -32,14 +32,13 @@
             <h2
               class="text-[36px] sm:text-[48px] md:text-[80px] lg:text-[140px] font-bold leading-tight brand-gradient-text-2 w-full"
             >
-              Rapid payouts,<br class="hidden sm:block" />loyal players
+              Verified faster,<br class="hidden sm:block" />trusted clients
             </h2>
           </div>
           <h3
             class="text-[20px] sm:text-[24px] md:text-[48px] lg:text-[81px] font-bold leading-tight text-surface-50 mb-4 sm:mb-[20px] lg:mb-[38px]"
           >
-            That’s how you win in a<br class="hidden sm:block" />competitive
-            market.
+            That's how you build trust<br class="hidden sm:block" />and reduce risks.
           </h3>
         </div>
 
@@ -62,7 +61,7 @@
                 <p
                   class="text-surface-200 text-sm sm:text-base md:text-lg lg:text-xl"
                 >
-                  Protect your platform and players with instant fraud
+                  Protect your platform and clients with instant fraud
                   detection.
                 </p>
               </div>
@@ -80,12 +79,12 @@
                 <h4
                   class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold brand-gradient-text"
                 >
-                  Faster Approvals, Happier Clients
+                  Streamlined Onboarding, Satisfied Clients
                 </h4>
                 <p
                   class="text-surface-200 text-sm sm:text-base md:text-lg lg:text-xl"
                 >
-                  Quick verification = more trust and player satisfaction.
+                  Accelerated onboarding = enhanced compliance and user trust.
                 </p>
               </div>
             </template>

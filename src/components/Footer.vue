@@ -2,16 +2,10 @@
   <footer class="w-full bg-surface-950 relative overflow-hidden">
     <div class="absolute inset-0 footer-gradient"></div>
 
-    <div
-      class="footer-container mx-auto px-4 sm:px-6 md:px-8 lg:px-[83px] py-[32px] relative"
-    >
-      <div
-        class="flex flex-col sm:flex-row justify-between gap-y-[32px] sm:gap-[22px]"
-      >
+    <div class="footer-container mx-auto px-4 sm:px-6 md:px-8 lg:px-[83px] py-[32px] relative">
+      <div class="flex flex-col sm:flex-row justify-between gap-y-[32px] sm:gap-[22px]">
         <!-- Левая колонка с якорными ссылками -->
-        <div
-          class="flex flex-col gap-[12px] w-full sm:w-auto items-center sm:items-start"
-        >
+        <div class="flex flex-col gap-[12px] w-full sm:w-auto items-center sm:items-start">
           <button
             v-for="link in leftLinks"
             :key="link.text"
@@ -29,9 +23,7 @@
             target="_blank"
             class="footer-button black text-[12px] sm:text-[14px] md:text-[16px] font-normal leading-[20px] h-11 w-full sm:min-w-[280px] gradient-border flex items-center justify-center"
           >
-            <span
-              class="bg-gradient-to-r from-rose-300 via-violet-400 to-sky-400 text-transparent bg-clip-text font-bold"
-            >
+            <span class="bg-gradient-to-r from-rose-300 via-violet-400 to-sky-400 text-transparent bg-clip-text font-bold">
               try TheAI
             </span>
           </a>
@@ -49,22 +41,22 @@ export default {
     const leftLinks = [
       { text: "For business", uid: "business" },
       { text: "Opportunities", uid: "opportunities" },
-    ]
+    ];
 
     // Функция плавного скролла к нужному блоку по его id
     const scrollToSection = (uid) => {
-      const el = document.getElementById(uid)
+      const el = document.getElementById(uid);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" })
+        el.scrollIntoView({ behavior: "smooth" });
       }
-    }
+    };
 
     return {
       leftLinks,
       scrollToSection,
-    }
+    };
   },
-}
+};
 </script>
 
 <style scoped>

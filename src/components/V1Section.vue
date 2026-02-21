@@ -47,7 +47,7 @@
                 <p
                   class="text-surface-50 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px]"
                 >
-                  Your players get instant answers at any time.
+                  Your clients get instant answers at any time.
                 </p>
               </div>
             </template>
